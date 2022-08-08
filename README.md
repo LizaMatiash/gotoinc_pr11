@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Создать ресурс Маршруты (Routes), для которого возможны все CRUD-операции. 
 
-Things you may want to cover:
+Маршрут имеет название, требуется валидация на наличие этого атрибута. 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Внимание! Создать ресурс нужно вручную, без ипользования скаффолдинга и других генераторов (генератор можно использовать только для создания миграции).
