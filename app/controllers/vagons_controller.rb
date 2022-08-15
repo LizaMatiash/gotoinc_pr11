@@ -52,6 +52,6 @@ class VagonsController < ApplicationController
   end
 
   def vagon_params
-    params.require(:vagon).permit(:train_id, :type, :places)
+    params.require(:vagon).permit(:train_id, :type_v, :places_up, :places_down)
   end
 end
