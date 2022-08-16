@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vagons list</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vagon Train Id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vagons.each do |vagon| %>
+      <tr>
+        <td><%= vagon.train_id %></td>
+        <td><%= link_to 'Show', vagon %></td>
+        <td><%= link_to 'Edit', edit_vagon_path(vagon) %></td>
+        <td><%= link_to 'Destroy', vagon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Route', new_vagon_path %>

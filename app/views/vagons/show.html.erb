@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @vagon.train_id %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @vagon.type_v %>
+</p>
+
+
+<%= link_to 'Edit', edit_vagon_path(@vagon) %> |
+<%= link_to 'Back', vagons_path %>

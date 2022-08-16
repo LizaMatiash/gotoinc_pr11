@@ -11,5 +11,24 @@
   <p>Train route is <%=  @train.route.name %> </p>
 <% end %>
 
+
+<% compartment_c1 = compartment_c2 = reserved_c1 = reserved_c2 = 0 %>
+
+<% @train.vagons.each do |vagon| %>
+  <% if vagon.type_v == 'compartment' %>
+    <% compartment_c1 += vagon.places_up %>
+    <% compartment_c2 += vagon.places_down %>
+  <% else %>
+    <% reserved_c1 += vagon.places_up%>
+    <% reserved_c2 += vagon.places_down%>
+  <% end %>
+<% end %>
+<p>Compartment vagons: <%= @train.vagons.compartment.count %> </p>
+<p>Upper places: <%= compartment_c1%></p>
+<p>Lower places: <%= compartment_c2%></p>
+<p>Reserved seat vagons: <%= @train.vagons.reserved_seat.count %> </p>
+<p>Upper places: <%= reserved_c1%></p>
+<p>Lower places: <%= reserved_c2%></p>
+
 <%= link_to 'Edit', edit_train_path(@train) %> |
 <%= link_to 'Back', trains_path %>
