@@ -3,14 +3,21 @@
   <%= render 'common/errors', resource: @vagon %>
 
   <div class="field">
+    <%= form.label :vagon_id %>
+    <%= form.number_field :vagon_id %>
+  </div>
+
+  <div class="field">
     <%= form.label :train %>
     <%= form.collection_select :train_id, Train.all, :id, :number %>
   </div>
 
   <div class="field">
-     <%= form.label :type_v %><br>
-     <%= form.select :type_v, Vagon.type_vs.keys.to_a %>
+     <%= form.label :type %><br>
+     <%= a = form.select :type, Vagon::TYPES %>
    </div>
+
+
 
   <div class="field">
     <%= form.label :places_up %>
@@ -20,6 +27,21 @@
   <div class="field">
     <%= form.label :places_down %>
     <%= form.number_field :places_down %>
+  </div>
+
+  <div class="field">
+    <%= form.label :side_places_down %>
+    <%= form.number_field :side_places_down %>
+  </div>
+
+  <div class="field">
+    <%= form.label :side_places_up %>
+    <%= form.number_field :side_places_up %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sitting_places %>
+    <%= form.number_field :sitting_places %>
   </div>
 
   <div class="actions">

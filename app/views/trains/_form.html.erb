@@ -11,6 +11,11 @@
     <%= form.collection_select :route_id, Route.all, :id, :name %>
   </div>
 
+  <div class="field">
+      <%= form.label 'Vagon order last to first?' %>
+      <%= form.select :vagon_order, [true, false] %>
+    </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

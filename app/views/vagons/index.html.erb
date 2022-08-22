@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Vagon Train Id</th>
+      <th>Vagon Id</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,7 +13,7 @@
   <tbody>
     <% @vagons.each do |vagon| %>
       <tr>
-        <td><%= vagon.train_id %></td>
+        <td><%= vagon.vagon_id %></td>
         <td><%= link_to 'Show', vagon %></td>
         <td><%= link_to 'Edit', edit_vagon_path(vagon) %></td>
         <td><%= link_to 'Destroy', vagon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Route', new_vagon_path %>
+<%= link_to 'New Vagon', new_vagon_path %>
