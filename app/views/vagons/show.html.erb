@@ -1,14 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @vagon.train_id %>
+  <strong>Vagon Id:</strong>
+  <%= @vagon.vagon_id %>
 </p>
 
 <p>
   <strong>Type:</strong>
-  <%= @vagon.type_v %>
+  <%= @vagon.type %>
 </p>
+
+<% if @vagon.type == 'SittingVagon'%>
+  <p>Sitting places: <%= @vagon.sitting_places %></p>
+<% else %>
+  <p>Places down: <%= @vagon.places_down %></p>
+  <% if @vagon.type != 'CvVagon'%>
+    <p>Places up: <%= @vagon.places_up %></p>
+    <% if @vagon.type == 'EconomyVagon' %>
+      <p>Side down places: <%= @vagon.side_places_down %></p>
+      <p>Side up places: <%= @vagon.side_places_up %></p>
+    <% end %>
+  <% end %>
+<% end %>
+<% %>
 
 
 <%= link_to 'Edit', edit_vagon_path(@vagon) %> |
