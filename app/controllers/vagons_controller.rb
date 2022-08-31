@@ -1,11 +1,13 @@
 class VagonsController < ApplicationController
-  before_action :set_vagon, only: %i[show edit update destroy]
+  before_action :set_train, only: %i[new create]
 
   def index
     @vagons = Vagon.all
   end
 
-  def show; end
+  def show
+    @vagon = Vagon.find(params[:id])
+  end
 
   def new
     @vagon = Vagon.new
@@ -14,11 +16,12 @@ class VagonsController < ApplicationController
   def edit; end
 
   def create
-    @vagon = Vagon.new(vagon_params)
+    # @train = Train.find(params[:train_id])
+    @vagon = @train.vagons.new(vagon_params)
 
     respond_to do |format|
       if @vagon.save
-        format.html { redirect_to vagon_url(@vagon), notice: 'Vagon was successfully created.' }
+        format.html { redirect_to @train, notice: 'Vagon was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -49,8 +52,12 @@ class VagonsController < ApplicationController
     @vagon = Vagon.find(params[:id])
   end
 
+  def set_train
+    @train = Train.find(params[:train_id])
+  end
+
   def vagon_params
-    params.require(:vagon).permit(:vagon_id, :train_id, :type, :places_up, :places_down, :sitting_places,
+    params.require(:vagon).permit(:vagon_id, :type, :places_up, :places_down, :sitting_places,
       :side_places_up, :side_places_down, :order_v)
   end
 end

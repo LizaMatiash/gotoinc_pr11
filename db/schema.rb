@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2022_08_17_183345) do
     t.integer "railway_station_id"
     t.integer "route_id"
     t.integer "station_index"
+    t.datetime "coming_time"
+    t.datetime "department_time"
   end
 
   create_table "routes", force: :cascade do |t|
@@ -32,11 +34,16 @@ ActiveRecord::Schema.define(version: 2022_08_17_183345) do
 
   create_table "tickets", force: :cascade do |t|
     t.integer "train_id"
+    t.integer "user_id"
     t.integer "base_station_id"
     t.integer "end_station_id"
+    t.text "lastname"
+    t.text "firstname"
+    t.integer "passport_id"
     t.index ["base_station_id"], name: "index_tickets_on_base_station_id"
     t.index ["end_station_id"], name: "index_tickets_on_end_station_id"
     t.index ["train_id"], name: "index_tickets_on_train_id"
+    t.index ["user_id"], name: "index_tickets_on_user_id"
   end
 
   create_table "trains", force: :cascade do |t|
@@ -52,6 +59,7 @@ ActiveRecord::Schema.define(version: 2022_08_17_183345) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.integer "number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

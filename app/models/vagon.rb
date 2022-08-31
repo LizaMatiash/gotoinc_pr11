@@ -1,6 +1,6 @@
 class Vagon < ApplicationRecord
 
-  TYPES = %w(CoupeVagon CvVagon EconomVagon SittingVagon)
+  TYPES = %w(CoupeVagon CvVagon EconomVagon SittingVagon Vagon)
 
   belongs_to :train
   # enum type: [:compartment, :reserved_seat]
