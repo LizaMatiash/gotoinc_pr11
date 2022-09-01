@@ -1,4 +1,4 @@
-class RailwayStationsController < ApplicationController
+class Admin::RailwayStationsController < Admin::BaseController
   before_action :set_railway_station, only: %i[show edit update destroy update_position update_time]
 
   def index
