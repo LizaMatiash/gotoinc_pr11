@@ -13,9 +13,10 @@
 
 
 <% @train.vagons.each do |vagon| %>
-  <p><%= link_to "#{vagon.vagon_id}", vagon_path(vagon) %></p>
+  <p><%= link_to "#{vagon.vagon_id}", vagon %></p>
 <% end %>
 
+<%= link_to 'Add vagon', new_train_vagon_path(@train) %>
 
 <%= link_to 'Edit', edit_train_path(@train) %> |
 <%= link_to 'Back', trains_path %>
