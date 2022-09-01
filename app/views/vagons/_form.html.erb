@@ -1,15 +1,10 @@
-<%= form_with(model: @vagon) do |form| %>
+<%= form_for [@train, @vagon] do |form| %>
 
   <%= render 'common/errors', resource: @vagon %>
 
   <div class="field">
     <%= form.label :vagon_id %>
     <%= form.number_field :vagon_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :train %>
-    <%= form.collection_select :train_id, Train.all, :id, :number %>
   </div>
 
   <div class="field">
