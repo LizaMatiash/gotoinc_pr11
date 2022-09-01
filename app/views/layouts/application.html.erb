@@ -11,7 +11,18 @@
   </head>
 
   <body>
+    <p id="notice" class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= yield %>
+    <br>
+    <br>
+    <% if user_signed_in? %>
+      <%= link_to 'Exit account', destroy_user_session_path, method: :delete %>
+      <p>Current user: <%= current_user.email%></p>
+    <% else %>
+      <%= link_to 'Enter account', new_user_session_path %>
+    <% end %>
   </body>
 
   <footer>

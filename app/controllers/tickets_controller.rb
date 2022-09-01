@@ -1,27 +1,33 @@
 class TicketsController < ApplicationController
+  before_action :authenticate_user!, only: %i[index create destroy]
   before_action :set_train, only: %i[new create]
 
   def show
+    @ticket = Ticket.find(params[:id])
   end
 
   def index
-    @tickets = Ticket.all
+    @tickets = current_user.tickets
   end
 
   def new
     # byebug
     @ticket = Ticket.new
-    # @start_station = RailwayStation.find(params[:base_station])
+    # @base_station = RailwayStation.where(railway_station_id: :start_station)
+    # byebug
     # @end_station = RailwayStation.find(params[:end_station])
+  end
+
+  def destroy
+    @ticket = Ticket.find(params[:id])
+    @ticket.destroy
+    redirect_to tickets_url, notice: 'Ticket was successfully destroyed.'
   end
 
   def create
     @ticket = @train.tickets.build(ticket_params)
-    @ticket.user = User.first
-    @ticket.base_station_id = 1
-    @ticket.end_station_id = 3
-    @ticket.firstname = 'As'
-    byebug
+    @ticket.user = current_user
+    # byebug
     if @ticket.save
       redirect_to tickets_path, notice: 'Ticket was successfully created.'
     else

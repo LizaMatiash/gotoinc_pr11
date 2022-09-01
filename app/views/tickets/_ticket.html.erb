@@ -2,4 +2,8 @@
   <td><%= ticket.firstname %></td>
   <td><%= ticket.lastname %></td>
   <td><%= ticket.passport_id %></td>
+  <td><%= ticket.train.number %></td>
+  <td><%= ticket.user.email %></td>
+  <td><%= link_to 'Delete', ticket_path(ticket), method: :delete %></td>
+  <td><%= link_to 'Show', ticket_path(ticket) %></td>
 </tr>

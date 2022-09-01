@@ -1,0 +1,7 @@
+<tr>
+  <td><%= ticket.firstname %></td>
+  <td><%= ticket.lastname %></td>
+  <td><%= ticket.passport_id %></td>
+  <td><%= ticket.train.number %></td>
+  <td><%= link_to 'Delete', admin_ticket_path(ticket), method: :delete %></td>
+</tr>
