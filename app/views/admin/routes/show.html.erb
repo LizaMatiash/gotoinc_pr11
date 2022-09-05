@@ -31,14 +31,14 @@
         <tr>
           <td><%= s.title %></td>
           <td>
-            <%= form_tag update_position_railway_station_path(s), method: :patch do %>
+            <%= form_tag update_position_admin_railway_station_path(s), method: :patch do %>
               <%= number_field_tag :station_index, s.position_in(@route)%>
               <%= hidden_field_tag :route_id, @route.id%>
               <%= submit_tag "Change" %>
             <% end %>
           </td>
           <td>
-            <%= form_tag update_time_railway_station_path(s), method: :patch do %>
+            <%= form_tag update_time_admin_railway_station_path(s), method: :patch do %>
               <%= datetime_field_tag :coming_time, s.coming_time(@route)%>
               <%= hidden_field_tag :route_id, @route.id%>
               <%= datetime_field_tag :department_time, s.department_time(@route)%>
@@ -52,5 +52,5 @@
   </table>
 <% end %>
 
-<%= link_to 'Edit', edit_route_path(@route) %> |
-<%= link_to 'Back', routes_path %>
+<%= link_to 'Edit', edit_admin_route_path(@route) %> |
+<%= link_to 'Back', admin_routes_path %>

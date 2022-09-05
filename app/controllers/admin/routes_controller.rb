@@ -17,7 +17,7 @@ module Admin
       @route = Route.new(route_params)
 
       if @route.save
-        redirect_to @route
+        redirect_to [:admin, @route]
       else
         render :new
       end
@@ -28,7 +28,7 @@ module Admin
 
     def update
       if @route.update(route_params)
-        redirect_to @route
+        redirect_to [:admin, @route]
       else
         render :edit
       end

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.2'
+ruby '2.7.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
@@ -24,6 +24,11 @@ gem 'jbuilder', '~> 2.7'
 gem 'net-smtp', require: false
 gem 'net-imap', require: false
 gem 'net-pop', require: false
+
+gem "therubyracer", "~> 0.12"
+gem 'twitter-bootstrap-rails'
+
+gem 'rails_12factor'
 
 gem 'devise'
 

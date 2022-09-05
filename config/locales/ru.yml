@@ -1,0 +1,22 @@
+ru:
+  common:
+    back: 'Повернутись'
+    errors: 'AAAAAAAAAAAA'
+    show: 'Детальніше'
+    title2: 'Назва'
+    edit: 'Редагувати'
+  admin:
+    railway_stations:
+      edit:
+        title: 'Редагування станції'
+      new:
+        title: 'Нова станція'
+      index:
+        title: 'Всі станції'
+        new_station: 'Створити нову станцію'
+      show:
+
+      form:
+        submit: '%{action} станцію'
+      railway_station:
+        destroy: 'Видалити'

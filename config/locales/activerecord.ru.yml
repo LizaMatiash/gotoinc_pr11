@@ -1,0 +1,23 @@
+ru:
+  activerecord:
+    models:
+      railway_station: 'Станція'
+      train: 'Потяг'
+      vagon: 'Вагон'
+    attributes:
+      railway_station:
+        title: 'Назва'
+      train:
+        number: 'Номер'
+        route: 'Шлях'
+      vagon:
+        vagon_id: 'Номер вагону'
+    errors:
+      messages:
+        blank: 'не може бути пустим(-ою)'
+        taken: 'вже зайнято'
+      models:
+        railway_station:
+          attributes:
+            title:
+              blank: 'має бути вказаною'

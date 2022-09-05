@@ -1,5 +1,5 @@
 class RailwayStation < ApplicationRecord
-
+  validates :title, presence: true
   has_many :railway_stations_routes, dependent: :destroy
   has_many :routes, through: :railway_stations_routes
   has_many :station_indexs, through: :railway_stations_routes
@@ -33,7 +33,7 @@ class RailwayStation < ApplicationRecord
   protected
 
   def station_route(route)
-    @station_route ||= railway_stations_routes.where(route:).first
+    @station_route ||= railway_stations_routes.where(route: route).first
   end
 
 end

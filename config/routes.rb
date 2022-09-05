@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :tickets, only: [:index]
-  resource :search_ticket, only: [:new, :show, :edit] do
+  resource :search_ticket, only: [:new, :show, :edit, :create] do
     post '/', to: 'search_tickets#find'
   end
 
@@ -23,6 +23,6 @@ Rails.application.routes.draw do
   # resources :vagons
   get 'welcome/index'
 
-  root 'welcome#index'
+  root 'search_tickets#show'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
