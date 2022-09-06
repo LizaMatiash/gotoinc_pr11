@@ -30,6 +30,8 @@ gem 'twitter-bootstrap-rails'
 
 gem 'rails_12factor'
 
+gem 'mailgun-ruby', '>= 1.2.0 '
+
 gem 'devise'
 
 # Use Active Storage variant
