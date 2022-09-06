@@ -1,17 +1,19 @@
 <h1>All stations</h1>
 
-<div>
+<div class ="row">
   <%= form_tag search_ticket_path do %>
-      <div>
+      <div class ="col-md-2">
         <p>First Station</p>
-        <%= select_tag :start_station, options_from_collection_for_select(@stations, :id, :title) %>
+        <%= select_tag :start_station, options_from_collection_for_select(@stations, :id, :title), class: "form-control" %>
       </div>
-      <div>
+      <div class ="col-md-2">
         <p>Last Station</p>
-        <%= select_tag :end_station, options_from_collection_for_select(@stations, :id, :title) %>
+        <%= select_tag :end_station, options_from_collection_for_select(@stations, :id, :title), class: "form-control"  %>
       </div>
-      <div>
-        <p><%= submit_tag "Search" %></p>
+      <div class ="col-md-8">
+        <p><br></p>
+        <p><%= submit_tag "Search", class: "btn btn-primary" %></p>
       </div>
   <% end %>
 </div>
+<br>
