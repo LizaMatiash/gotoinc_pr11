@@ -99,7 +99,7 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = {host: "damp-wave-91589.herokuapp.com"}
   config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = { api_token: ENV['MAILGUN_API_TOKEN']}
+  config.action_mailer.mailgun_settings = { api_token: ENV['MAILGUN_API_KEY']}
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
   # middleware. The `delay` is used to determine how long to wait after a write
