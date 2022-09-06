@@ -4,7 +4,7 @@
   <%= form_tag search_ticket_path do %>
       <div class ="col-md-2">
         <p>First Station</p>
-        <%= select_tag :start_station, options_from_collection_for_select(@stations, :id, :title), class: "form-control" %>
+        <%= select_tag :base_station, options_from_collection_for_select(@stations, :id, :title), class: "form-control" %>
       </div>
       <div class ="col-md-2">
         <p>Last Station</p>

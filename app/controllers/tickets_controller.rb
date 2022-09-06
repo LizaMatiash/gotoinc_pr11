@@ -13,9 +13,8 @@ class TicketsController < ApplicationController
   def new
     # byebug
     @ticket = Ticket.new
-    # @base_station = RailwayStation.where(railway_station_id: :start_station)
-    # byebug
-    # @end_station = RailwayStation.find(params[:end_station])
+    @base_station = RailwayStation.find(params[:base_station])
+    @end_station = RailwayStation.find(params[:end_station])
   end
 
   def destroy
